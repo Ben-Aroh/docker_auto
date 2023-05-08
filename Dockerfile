@@ -1,4 +1,4 @@
 ARG versions
-FROM ubuntu:${versions}
-MAINTAINER Rudolph Nfor
+FROM tomcat:${versions}
+MAINTAINER Ben Aroh
 EXPOSE 80
