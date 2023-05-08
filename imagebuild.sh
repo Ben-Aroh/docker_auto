@@ -11,7 +11,7 @@ read -s -p "Please enter dockerhub password: " password
 dockerrepo=benapp
 versions=( 10.1.8 10.0.27 9.0.74 9.0.73 8.5.88 8.0.53 7.0.109 )
 for i in ${versions[@]}; do
-docker build -t $dockeruser/$dockerrepo:$i --build-arg versions=groovy .
+docker build -t $dockeruser/$dockerrepo:$i --build-arg versions=$i .
 docker login -u $dockeruser -p $password
 docker push $dockeruser/$dockerrepo:$i
 echo "$user is running a docker container with etechteam2/etecapp:$i on $today"
